@@ -129,10 +129,37 @@ h2.big{font-size:clamp(28px,4vw,42px);color:#fff;margin-bottom:18px}
 .ach-card p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.55}
 
 /* social stat strip */
-.social-strip{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px}
-.sstat{flex:1;min-width:150px;text-align:center;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.25);border-radius:8px;padding:20px}
-.sstat b{display:block;font-family:'Playfair Display',serif;color:var(--gold);font-size:24px}
-.sstat span{font-size:11px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.5px}
+.social-strip{display:flex;flex-wrap:wrap;gap:16px;margin:28px 0}
+.sstat{flex:1;min-width:160px;text-align:center;background:linear-gradient(145deg,rgba(212,175,55,.08),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:22px 16px;transition:transform .2s ease}
+.sstat:hover{transform:translateY(-4px);border-color:var(--gold)}
+.sstat b{display:block;font-family:'Playfair Display',serif;color:var(--gold);font-size:28px;margin-bottom:4px}
+.sstat span{font-size:11.5px;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1px;font-family:'Oswald',sans-serif}
+
+/* galerias comunitarias (criancas e sao jorge) */
+.event-showcase{background:linear-gradient(145deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:32px 28px;margin-top:36px}
+.event-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+.event-header h3{font-size:26px;color:#fff;font-family:'Playfair Display',serif}
+.event-header h3 span{color:var(--gold);font-size:13px;display:block;font-family:'Oswald',sans-serif;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.event-header p{color:rgba(255,255,255,.8);font-size:14.5px;line-height:1.6;max-width:820px;margin-top:8px}
+.event-badge{background:var(--red);color:#fff;font-family:'Oswald',sans-serif;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;font-weight:700}
+.event-badge.gold{background:var(--gold);color:#111}
+
+.comm-photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px}
+.comm-photo-card{position:relative;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.12);aspect-ratio:4/3;cursor:pointer;background:#000}
+.comm-photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.comm-photo-card:hover img{transform:scale(1.08)}
+.comm-photo-card .comm-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.88) 100%);display:flex;align-items:flex-end;padding:12px 14px;transition:opacity .2s ease}
+.comm-photo-card .comm-caption{font-family:'Oswald',sans-serif;font-size:12px;color:#fff;letter-spacing:.5px}
+
+/* secao de midia e reportagens */
+.media-section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:32px}
+.mcard{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:26px 22px;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;transition:all .28s cubic-bezier(.16,1,.3,1)}
+.mcard:hover{transform:translateY(-6px);border-color:var(--gold);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(212,175,55,.05));box-shadow:0 16px 36px rgba(0,0,0,.6),0 0 20px rgba(212,175,55,.18)}
+.mcard-tag{align-self:flex-start;font-family:'Oswald',sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);padding:4px 10px;border-radius:12px}
+.mcard h3{font-family:'Playfair Display',serif;font-size:18px;color:#fff;line-height:1.3}
+.mcard p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55;flex-grow:1}
+.mcard-cta{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-weight:700}
+.mcard:hover .mcard-cta{color:#fff}
 
 /* footer */
 footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,.2)}
@@ -153,7 +180,7 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
 </head>
 <body>
 
-<div class="preview-bar">🔒 PRÉVIA INTERNA · Site ainda não publicado · Turma Nova Geração</div>
+<div class="preview-bar">🎭 Turma Nova Geração · 26 Anos de Tradição, Carnaval e Ação Comunitária na Zona Oeste · Rio de Janeiro</div>
 
 <nav>
   <div class="container">
@@ -163,7 +190,9 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
       <a href="#linha-do-tempo">Linha do Tempo</a>
       <a href="#conquistas">Conquistas</a>
       <a href="#parceiros">Parceiros</a>
-      <a href="#comunidade">Comunidade</a>
+      <a href="#comunidade">Dia das Crianças</a>
+      <a href="#sao-jorge">São Jorge</a>
+      <a href="#midia">Na Mídia</a>
       <a href="#contato">Contato</a>
     </div>
     <div style="display:flex;gap:8px;align-items:center">
@@ -680,16 +709,142 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
   </div>
 </section>
 
+<!-- SEÇÃO 1: DIA DAS CRIANÇAS & AÇÃO COMUNITÁRIA -->
 <section id="comunidade" class="dark-section">
   <div class="container">
-    <div class="section-label">Responsabilidade Social</div>
-    <h2 class="big">Ação Comunitária e Formação Cultural</h2>
-    <p class="lead">Além do carnaval, a Nova Geração realiza ações comunitárias como a tradicional Festa do Dia das Crianças, o projeto formativo Edital Janelão e homenagens populares como a Festa de São Jorge — reforçando o cuidado com o próximo e o papel social da cultura.</p>
+    <div class="section-label">Ação Comunitária e Social</div>
+    <h2 class="big">Festa Tradicional do Dia das Crianças</h2>
+    <p class="lead">Muito além do carnaval, a Turma Nova Geração mantém um compromisso sagrado com o território e com o futuro: transformar o Dia das Crianças em um dia inesquecível de dignidade, brincadeiras e alegria gratuita para centenas de famílias de Campo Grande.</p>
+
     <div class="social-strip">
-      <div class="sstat"><b>325</b><span>Crianças Atendidas em 2025</span></div>
-      <div class="sstat"><b>2021</b><span>Festa das Crianças Desde</span></div>
-      <div class="sstat"><b>23+</b><span>Anos de Ateliê na Casa de Dona Rosa</span></div>
-      <div class="sstat"><b>26</b><span>Muros Pintados Anunciando o Tema</span></div>
+      <div class="sstat"><b>+320</b><span>Crianças Atendidas / Ano</span></div>
+      <div class="sstat"><b>Desde 2021</b><span>Tradição Ininterrupta</span></div>
+      <div class="sstat"><b>100% Gratuito</b><span>Brinquedos, Doces e Lanches</span></div>
+      <div class="sstat"><b>Praça Jamil Machado</b><span>Polo de Convivência Popular</span></div>
+    </div>
+
+    <div class="event-showcase">
+      <div class="event-header">
+        <div>
+          <span class="event-badge">Solidariedade & Alegria</span>
+          <h3 style="margin-top:10px">A Maior Celebração Infantil da Nossa Região<span>Parcerias Comunitárias & Recreação Completa</span></h3>
+          <p>Organizada com amor pelos integrantes, voluntários e famílias da turma, a festa conta com circuito de brinquedos infláveis (futebol de sabão, tobogã gigante, cama elástica, fliperama e totó com a <strong>Brinquedos Evelin</strong>), distribuição contínua de cachorros-quentes (parceria com a <strong>Padaria 3 Corações</strong>), pipoca, picolés, refrigerante e guaraná <strong>Guaracamp</strong>, além de hidratação garantida pelo Programa de Aguadeiros da <strong>CEDAE</strong> e cenografia com a <strong>Artlatex Balões</strong> e <strong>Antônio Pitassi</strong>.</p>
+        </div>
+      </div>
+
+      <div class="comm-photo-grid">
+        <div class="comm-photo-card" onclick="openLightbox('assets/criancas/criancas-2026-flyer.jpg')">
+          <img src="assets/criancas/criancas-2026-flyer.jpg" alt="Flyer Oficial Dia das Crianças 2026"/>
+          <div class="comm-overlay"><span class="comm-caption">🎪 Edição 2026 · Cartaz Oficial e Empresas Parceiras</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/criancas/criancas-2025-1.jpg')">
+          <img src="assets/criancas/criancas-2025-1.jpg" alt="Festa das Crianças 2025"/>
+          <div class="comm-overlay"><span class="comm-caption">🎈 Distribuição de Brinquedos e Guloseimas</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/criancas/criancas-2025-2.jpg')">
+          <img src="assets/criancas/criancas-2025-2.jpg" alt="Crianças se divertindo na festa"/>
+          <div class="comm-overlay"><span class="comm-caption">👧 Alegria e Convivência das Famílias</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/criancas/criancas-2025-3.jpg')">
+          <img src="assets/criancas/criancas-2025-3.jpg" alt="Brinquedos Infláveis e Recreação"/>
+          <div class="comm-overlay"><span class="comm-caption">🏰 Estações de Jogos e Infláveis</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/criancas/criancas-2023-1.jpg')">
+          <img src="assets/criancas/criancas-2023-1.jpg" alt="Edição 2023 da Festa"/>
+          <div class="comm-overlay"><span class="comm-caption">🎁 Voluntários e Entrega dos Presentes</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/criancas/criancas-2023-2.jpg')">
+          <img src="assets/criancas/criancas-2023-2.jpg" alt="Equipe Nova Geração reunida"/>
+          <div class="comm-overlay"><span class="comm-caption">❤️ Família Nova Geração Mobilizada</span></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:12px;text-align:right">💡 Clique em qualquer foto para ampliar</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 2: FESTA E HOMENAGEM A SÃO JORGE -->
+<section id="sao-jorge" class="dark-section" style="background:#090909">
+  <div class="container">
+    <div class="section-label">Fé, Devoção e Identidade</div>
+    <h2 class="big">Tradição e a Festa de São Jorge</h2>
+    <p class="lead">Para o povo do samba e da cultura de bate-bolas, São Jorge é o padroeiro guerreiro da coragem, da proteção e da caminhada. Na Turma Nova Geração, essa devoção é vivida na pele e nas ruas todos os anos.</p>
+
+    <div class="event-showcase" style="border-color:rgba(212,175,55,.25);background:linear-gradient(145deg,rgba(196,18,48,.08),rgba(212,175,55,.03))">
+      <div class="event-header">
+        <div>
+          <span class="event-badge gold">Devoção e Carnaval</span>
+          <h3 style="margin-top:10px">O Guerreiro que Ilumina a Nossa Caminhada<span>Tema Antológico de 2022 · Alvorada, Feijoada e Camisa Oficial</span></h3>
+          <p>No carnaval de 2022, a Nova Geração levou para as ruas o tema histórico <em>"Homenagem a São Jorge"</em>, eternizando nas fantasias de Clóvis o dragão, a lua e a armadura do santo mártir. Todo dia 23 de abril, o ateliê e a comunidade celebram a tradicional alvorada de fogos, a feijoada fraterna e a camisa oficial comemorativa, reunindo amigos e coirmãs de toda a Zona Oeste.</p>
+        </div>
+      </div>
+
+      <div class="comm-photo-grid">
+        <div class="comm-photo-card" onclick="openLightbox('assets/sao-jorge/camisa-sao-jorge.jpg')">
+          <img src="assets/sao-jorge/camisa-sao-jorge.jpg" alt="Camisa Oficial São Jorge"/>
+          <div class="comm-overlay"><span class="comm-caption">👕 Camisa Oficial Comemorativa de São Jorge</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/sao-jorge/sao-jorge-2.jpg')">
+          <img src="assets/sao-jorge/sao-jorge-2.jpg" alt="Fantasia São Jorge 2022"/>
+          <div class="comm-overlay"><span class="comm-caption">🛡️ Desfile 2022 · Fantasia Homenagem a São Jorge</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/sao-jorge/sao-jorge-3.jpg')">
+          <img src="assets/sao-jorge/sao-jorge-3.jpg" alt="Integrantes na celebração de São Jorge"/>
+          <div class="comm-overlay"><span class="comm-caption">⚔️ Componentes e Estandarte do Santo Guerreiro</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/sao-jorge/sao-jorge-4.jpg')">
+          <img src="assets/sao-jorge/sao-jorge-4.jpg" alt="Manto de São Jorge"/>
+          <div class="comm-overlay"><span class="comm-caption">✨ Detalhes da Pintura e Acabamento Artístico</span></div>
+        </div>
+        <div class="comm-photo-card" onclick="openLightbox('assets/sao-jorge/sao-jorge-1.jpg')">
+          <img src="assets/sao-jorge/sao-jorge-1.jpg" alt="Baluartes e Família"/>
+          <div class="comm-overlay"><span class="comm-caption">🙏 Fé e Tradição Mantidas Vivas em Família</span></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,.5);margin-top:12px;text-align:right">💡 Clique em qualquer foto para ampliar</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3: NA MÍDIA, VÍDEOS & ENTREVISTAS -->
+<section id="midia" class="dark-section">
+  <div class="container">
+    <div class="section-label">Cobertura e Reconhecimento</div>
+    <h2 class="big">A Nova Geração na Mídia</h2>
+    <p class="lead">O pioneirismo, a arte e o impacto social da Turma Nova Geração são documentados pela imprensa regional, veículos especializados do carnaval carioca e pelo poder público:</p>
+
+    <div class="media-section-grid">
+      <!-- 1. Video Subprefeitura -->
+      <a class="mcard" href="https://www.instagram.com/reel/DGS6-_HR5DV/" target="_blank" rel="noopener">
+        <span class="mcard-tag">🏛️ Prefeitura do Rio · Vídeo Oficial</span>
+        <h3>Entrevista e Homenagem na Subprefeitura Zona Oeste II</h3>
+        <p>Espaço institucional oficial concedido pela Subprefeitura do Rio de Janeiro – Zona Oeste II, registrando em vídeo a relevância cultural dos bate-bolas e o papel da Nova Geração na identidade de Campo Grande.</p>
+        <span class="mcard-cta">▶️ Assistir Vídeo no Instagram ↗</span>
+      </a>
+
+      <!-- 2. Antigo Campo Grande ACG News -->
+      <a class="mcard" href="https://acgnews.com.br/tradicao-resistencia-e-identidade-turma-nova-geracao-mantem-viva-a-cultura-dos-bate-bolas-na-zona-oeste-do-rio/178688/" target="_blank" rel="noopener">
+        <span class="mcard-tag">📰 Portal de Notícias · ACG News</span>
+        <h3>Reportagem Especial: "Tradição, Resistência e Identidade"</h3>
+        <p>Matéria aprofundada do portal <strong>Antigo Campo Grande (ACG News)</strong> narrando os 26 anos de história contínua, as origens no ateliê da Dona Rosa e as ações solidárias da turma no subúrbio carioca.</p>
+        <span class="mcard-cta">📄 Ler Reportagem Completa ↗</span>
+      </a>
+
+      <!-- 3. Jornal Bate Bola -->
+      <a class="mcard" href="https://www.instagram.com/p/DVb0aPxCZjX/" target="_blank" rel="noopener">
+        <span class="mcard-tag">🎭 Imprensa Especializada</span>
+        <h3>Destaque de Capa no Jornal Bate Bola</h3>
+        <p>Cobertura dedicada no principal veículo de comunicação voltado exclusivamente à tradição dos bate-bolas no Estado do Rio, evidenciando o padrão artístico e a organização da turma.</p>
+        <span class="mcard-cta">🔍 Ver Matéria ↗</span>
+      </a>
+
+      <!-- 4. Ritmo de Bate Bolas -->
+      <a class="mcard" href="https://www.instagram.com/reel/DTYlKC2kgOo/" target="_blank" rel="noopener">
+        <span class="mcard-tag">🎥 Audiovisual & Desfile</span>
+        <h3>Canal "Ritmo de Bate Bolas": Desfile em Alta Definição</h3>
+        <p>Registro audiovisual dinâmico da evolução, harmonia dos componentes e impacto sonoro das bolas nas ruas da Zona Oeste durante o carnaval.</p>
+        <span class="mcard-cta">🎬 Assistir Desfile ↗</span>
+      </a>
     </div>
   </div>
 </section>
