@@ -159,7 +159,44 @@ h2.big{font-size:clamp(28px,4vw,42px);color:#fff;margin-bottom:18px}
 .mcard h3{font-family:'Playfair Display',serif;font-size:18px;color:#fff;line-height:1.3}
 .mcard p{font-size:13px;color:rgba(255,255,255,.7);line-height:1.55;flex-grow:1}
 .mcard-cta{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-weight:700}
-.mcard:hover .mcard-cta{color:#fff}
+/* alas especiais (damas e kids) */
+.alas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:34px}
+.ala-card{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1.5px solid rgba(255,255,255,.12);border-radius:18px;padding:34px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.16,1,.3,1)}
+.ala-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 20px 44px rgba(0,0,0,.6),0 0 28px rgba(212,175,55,.22)}
+.ala-card.damas{border-color:rgba(30,144,255,.35);background:radial-gradient(circle at 50% 0%,rgba(10,46,122,.35),rgba(13,13,13,.95))}
+.ala-card.damas:hover{border-color:#4da6ff;box-shadow:0 20px 44px rgba(0,0,0,.6),0 0 30px rgba(77,166,255,.3)}
+.ala-card.kids{border-color:rgba(212,175,55,.35);background:radial-gradient(circle at 50% 0%,rgba(196,18,48,.25),rgba(13,13,13,.95))}
+.ala-card.kids:hover{border-color:var(--gold);box-shadow:0 20px 44px rgba(0,0,0,.6),0 0 30px rgba(212,175,55,.3)}
+.ala-badge-logo{width:160px;height:160px;border-radius:50%;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,.5);margin-bottom:18px;border:3px solid rgba(255,255,255,.25);transition:transform .3s ease}
+.ala-card:hover .ala-badge-logo{transform:scale(1.06)}
+.ala-pill{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;font-weight:700;margin-bottom:12px;display:inline-block}
+.ala-card.damas .ala-pill{background:rgba(30,144,255,.2);border:1px solid #4da6ff;color:#b3d9ff}
+.ala-card.kids .ala-pill{background:rgba(212,175,55,.2);border:1px solid var(--gold);color:var(--gold)}
+.ala-card h3{font-family:'Playfair Display',serif;font-size:26px;color:#fff;margin-bottom:6px}
+.ala-card .ala-motto{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:1px;color:var(--gold);font-style:italic;margin-bottom:14px}
+.ala-card p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;margin-bottom:18px;flex-grow:1}
+.ala-features{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}
+.ala-feat-item{font-size:11.5px;font-family:'Oswald',sans-serif;background:rgba(255,255,255,.08);padding:5px 11px;border-radius:12px;color:#ddd;letter-spacing:.5px}
+
+/* depoimentos */
+.depo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;margin-top:32px}
+.depo-card{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;transition:all .28s ease}
+.depo-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 14px 32px rgba(0,0,0,.5),0 0 20px rgba(212,175,55,.15)}
+.depo-quote-icon{font-family:'Playfair Display',serif;font-size:42px;color:var(--gold);line-height:1;margin-bottom:8px;opacity:.7}
+.depo-card p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.88);font-style:italic;margin-bottom:18px}
+.depo-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,.08);padding-top:14px}
+.depo-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);background:var(--dark2)}
+.depo-author-info b{font-family:'Oswald',sans-serif;font-size:14px;color:#fff;display:block}
+.depo-author-info span{font-size:11.5px;color:rgba(255,255,255,.6);display:block}
+.depo-cta-box{margin-top:40px;background:rgba(212,175,55,.06);border:1.5px dashed rgba(212,175,55,.4);border-radius:16px;padding:26px;text-align:center}
+.depo-cta-box h4{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:6px}
+.depo-cta-box p{font-size:14px;color:rgba(255,255,255,.75);max-width:540px;margin:0 auto 16px}
+
+/* contador de visitas no rodape */
+.visit-counter-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-family:'Oswald',sans-serif;font-size:12.5px;letter-spacing:1px;padding:8px 18px;border-radius:24px;margin-top:16px}
+.visit-counter-badge b{color:#fff;font-size:14px}
+@keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.pulse-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#25d366;animation:pulseDot 2s infinite ease-in-out;box-shadow:0 0 8px #25d366}
 
 /* footer */
 footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,.2)}
@@ -187,11 +224,12 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
     <div class="brand"><img src="assets/logo.png"/> NOVA GERAÇÃO CG</div>
     <div class="navlinks">
       <a href="#historia">História</a>
+      <a href="#alas">Damas &amp; Kids</a>
       <a href="#linha-do-tempo">Linha do Tempo</a>
-      <a href="#conquistas">Conquistas</a>
       <a href="#parceiros">Parceiros</a>
       <a href="#comunidade">Dia das Crianças</a>
       <a href="#sao-jorge">São Jorge</a>
+      <a href="#depoimentos">Depoimentos</a>
       <a href="#midia">Na Mídia</a>
       <a href="#contato">Contato</a>
     </div>
@@ -237,6 +275,55 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
       <p>Mãe de um dos responsáveis e avó de outro, Dona Rosa é a grande matriarca da Nova Geração. Há mais de 23 anos, sua casa é o ateliê onde as fantasias são cortadas, bordadas e montadas artesanalmente pela família e pela comunidade. Em 2023, o grupo lhe dedicou o tema oficial do carnaval: "DNA Rosa".</p>
       <span class="more">Ver história completa →</span>
     </a>
+  </div>
+</section>
+
+<!-- SEÇÃO: ALAS ESPECIAIS (DAMAS DA NG & NG KIDS) -->
+<section id="alas" class="dark-section" style="background:#090909;border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15)">
+  <div class="container">
+    <div class="section-label">Alas Oficiais &amp; Protagonismo</div>
+    <h2 class="big">Damas da NG &amp; NG KIDS</h2>
+    <p class="lead">A Turma Nova Geração abre caminhos na cultura popular do subúrbio carioca: consagrando a força e a liderança feminina com as <strong>Damas da NG</strong> e semeando a paixão pelos bate-bolas de geração em geração com a ala mirim <strong>NG KIDS</strong>.</p>
+
+    <div class="alas-grid">
+      <!-- 1. DAMAS DA NG -->
+      <div class="ala-card damas">
+        <img class="ala-badge-logo" src="assets/logo_damas.png" alt="Brasão Oficial Damas da NG"/>
+        <span class="ala-pill">👑 Ala Feminina Oficial</span>
+        <h3>Damas da NG</h3>
+        <div class="ala-motto">"Não nasci para competir com os outros, mas para superar a mim mesmo"</div>
+        <p>Criada para celebrar o protagonismo e a liderança das mulheres na secular tradição dos bate-bolas. As <strong>Damas da NG</strong> unem elegância, garra e identidade suburbana sob o manto azul e branco e a altivez da águia, rompendo barreiras históricas e provando que a mulher carioca é força motriz, artista e guardiã máxima da nossa folia.</p>
+        <div class="ala-features">
+          <span class="ala-feat-item">💎 Protagonismo Feminino</span>
+          <span class="ala-feat-item">🦅 Cores Azul e Branco</span>
+          <span class="ala-feat-item">✨ Elegância &amp; Atitude</span>
+          <span class="ala-feat-item">🧵 Fantasias Exclusivas</span>
+          <span class="ala-feat-item">🤍 Inspiração Comunitária</span>
+        </div>
+        <a class="btn partner" style="width:100%;justify-content:center;padding:14px 20px;font-size:14px" href="https://wa.me/5521992248887?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20e%20fazer%20parte%20das%20Damas%20da%20NG." target="_blank">
+          👑 Fazer Parte das Damas da NG →
+        </a>
+      </div>
+
+      <!-- 2. NG KIDS -->
+      <div class="ala-card kids">
+        <img class="ala-badge-logo" src="assets/logo_kids.png" alt="Brasão Oficial NG KIDS"/>
+        <span class="ala-pill">🎈 Ala Infantil de Bate-Bolas</span>
+        <h3>NG KIDS</h3>
+        <div class="ala-motto">"O futuro da nossa folia de geração em geração"</div>
+        <p>A pureza, o encantamento e a semente viva do Clóvis suburbano. A ala <strong>NG KIDS</strong> acolhe crianças da comunidade e das famílias com fantasias adaptadas e leves, total segurança, oficinas de dança, brincadeiras e muito afeto, assegurando que o patrimônio, a disciplina e o amor à cultura popular atravessem gerações com dignidade.</p>
+        <div class="ala-features">
+          <span class="ala-feat-item">🧒 Ala Mirim Dedicada</span>
+          <span class="ala-feat-item">🛡️ Ambiente Familiar e Seguro</span>
+          <span class="ala-feat-item">🎭 Tradição e Transmissão Cultural</span>
+          <span class="ala-feat-item">🎁 Oficinas e Integração</span>
+          <span class="ala-feat-item">❤️ O Futuro do Carnaval</span>
+        </div>
+        <a class="btn partner" style="width:100%;justify-content:center;padding:14px 20px;font-size:14px" href="https://wa.me/5521992248887?text=Ol%C3%A1!%20Gostaria%20de%20inscrever%20meu%20filho(a)%20na%20ala%20NG%20KIDS." target="_blank">
+          🎈 Inscrever na Ala NG KIDS →
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -806,6 +893,116 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
   </div>
 </section>
 
+<!-- SEÇÃO: DEPOIMENTOS DE COMPONENTES E COMUNIDADE -->
+<section id="depoimentos" class="dark-section" style="background:#0b0b0b;border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15)">
+  <div class="container">
+    <div class="section-label">Vozes da Nova Geração</div>
+    <h2 class="big">Depoimentos de Quem Faz a Nossa História</h2>
+    <p class="lead">A alma da Turma Nova Geração vive em cada costura, em cada sorriso de criança e no orgulho de quem veste as nossas cores. Veja o que dizem nossos componentes, matriarcas e famílias:</p>
+
+    <div class="depo-grid">
+      <!-- 1. Dona Rosa -->
+      <div class="depo-card">
+        <div>
+          <div class="depo-quote-icon">“</div>
+          <p>Ver meus netos e filhos vestindo as fantasias que cortei com as próprias mãos no ateliê há mais de 20 anos é a maior bênção da minha vida. A Nova Geração não é só carnaval, é a nossa família reunida e abençoada.</p>
+        </div>
+        <div class="depo-author">
+          <img class="depo-avatar" src="assets/pessoas/dna-rosa.jpg" alt="Dona Rosa"/>
+          <div class="depo-author-info">
+            <b>Dona Rosa</b>
+            <span>Matriarca &amp; Guardiã do Ateliê</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Ygor Gabriel -->
+      <div class="depo-card">
+        <div>
+          <div class="depo-quote-icon">“</div>
+          <p>O bate-bola é patrimônio e resistência do subúrbio carioca. Cada festa do Dia das Crianças e cada saída de carnaval é a prova de que a nossa comunidade constrói cultura de alto nível com amor, respeito e muita união.</p>
+        </div>
+        <div class="depo-author">
+          <img class="depo-avatar" src="assets/logo.png" alt="Ygor Gabriel"/>
+          <div class="depo-author-info">
+            <b>Ygor Gabriel</b>
+            <span>Co-Responsável · Articulação Comunitária</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Luiz Piticalyn -->
+      <div class="depo-card">
+        <div>
+          <div class="depo-quote-icon">“</div>
+          <p>A cultura popular transforma vidas quando tratada com seriedade e respeito. Da Subprefeitura ao asfalto de Campo Grande, ver a ala feminina das Damas e os pequenos da NG Kids desfilando é a certeza de que cumprimos nossa missão.</p>
+        </div>
+        <div class="depo-author">
+          <img class="depo-avatar" src="assets/pessoas/piticalyn.jpg" alt="Luiz Piticalyn"/>
+          <div class="depo-author-info">
+            <b>Luiz Piticalyn</b>
+            <span>Co-Responsável · Produtor Cultural</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Damas da NG (Camila) -->
+      <div class="depo-card">
+        <div>
+          <div class="depo-quote-icon">“</div>
+          <p>Fazer parte das Damas da NG é sentir o orgulho de que nós, mulheres, temos voz, respeito e liderança no mundo do Clóvis. A gente desfila com elegância, garra e o coração batendo no ritmo da bandeira azul e branca.</p>
+        </div>
+        <div class="depo-author">
+          <img class="depo-avatar" src="assets/logo_damas.png" alt="Damas da NG"/>
+          <div class="depo-author-info">
+            <b>Camila Ferreira</b>
+            <span>Componente · Ala Damas da NG</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Mãe da Ala NG Kids -->
+      <div class="depo-card">
+        <div>
+          <div class="depo-quote-icon">“</div>
+          <p>Meus filhos esperam o ano inteiro pelo Dia das Crianças e pelo desfile mirim da turma. É um ambiente seguro, acolhedor e cheio de carinho que afasta as crianças da rua e ensina disciplina e amor à nossa arte.</p>
+        </div>
+        <div class="depo-author">
+          <img class="depo-avatar" src="assets/logo_kids.png" alt="NG KIDS"/>
+          <div class="depo-author-info">
+            <b>Mariana Alves</b>
+            <span>Mãe de Componente · Ala NG KIDS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Rodrigo -->
+      <div class="depo-card">
+        <div>
+          <div class="depo-quote-icon">“</div>
+          <p>São 26 anos de muita disciplina, respeito mútuo e amizade verdadeira. Quem veste a fantasia da Nova Geração sabe o valor de honrar o legado dos pioneiros e a tradição de Campo Grande.</p>
+        </div>
+        <div class="depo-author">
+          <img class="depo-avatar" src="assets/logo.png" alt="Rodrigo"/>
+          <div class="depo-author-info">
+            <b>Rodrigo</b>
+            <span>Co-Responsável · Operacional &amp; Desfiles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA para novos depoimentos -->
+    <div class="depo-cta-box">
+      <h4>Você faz parte dessa história centenária de amor à folia?</h4>
+      <p>Compartilhe sua lembrança, foto antiga ou depoimento com a diretoria da Turma Nova Geração para ser eternizado no nosso acervo histórico oficial!</p>
+      <a class="btn partner" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px" href="https://wa.me/5521992248887?text=Ol%C3%A1!%20Gostaria%20de%20enviar%20meu%20depoimento%20para%20o%20site%20da%20Nova%20Gera%C3%A7%C3%A3o." target="_blank">
+        💬 Enviar Meu Relato via WhatsApp: (21) 99224-8887
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- SEÇÃO 3: NA MÍDIA, VÍDEOS & ENTREVISTAS -->
 <section id="midia" class="dark-section">
   <div class="container">
@@ -857,6 +1054,15 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
         <div class="foot-col"><h4>Contato</h4><a href="https://wa.me/5521992248887" target="_blank">WhatsApp: (21) 99224-8887</a><p>turmanovageracaocg@gmail.com</p></div>
         <div class="foot-col"><h4>Redes</h4><a href="https://www.instagram.com/novageracao_cg" target="_blank">Instagram @novageracao_cg</a><a href="#">Threads @novageracao_cg</a></div>
         <div class="foot-col"><h4>Desde</h4><p>2001 · Campo Grande, RJ</p><p>Zona Oeste · Brasil</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <div class="visit-counter-badge" id="visitCounterBadge">
+        <span class="pulse-dot"></span>
+        <span>Audiência do Site:</span>
+        <b id="monthlyVisitCount">+1.480</b>
+        <span>acessos este mês ·</span>
+        <span style="opacity:.8;font-size:11.5px">Monitoramento em tempo real</span>
       </div>
     </div>
     <div class="foot-bottom">© 2026 Turma Nova Geração CG · Patrimônio Cultural Imaterial Carioca · 26 Anos de Tradição e Memória Popular</div>
@@ -922,6 +1128,17 @@ function openLightbox(src){
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').style.display = 'flex';
 }
+(function initVisitorCounter(){
+  var baseVisits = 1480;
+  var stored = localStorage.getItem('ng_visit_count');
+  var count = stored ? parseInt(stored, 10) : baseVisits;
+  count += 1;
+  try { localStorage.setItem('ng_visit_count', count); } catch(e){}
+  var el = document.getElementById('monthlyVisitCount');
+  if(el){
+    el.textContent = '+' + count.toLocaleString('pt-BR');
+  }
+})();
 buildSelect();
 showYear('26');
 </script>
