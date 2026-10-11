@@ -68,14 +68,27 @@ h2.big{font-size:clamp(28px,4vw,42px);color:#fff;margin-bottom:18px}
 .rosa-box p{color:rgba(255,255,255,.8);font-size:14.5px;line-height:1.6}
 .rosa-box .more{display:block;margin-top:10px;font-family:'Oswald',sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold)}
 
-/* parceiros */
-.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:30px;align-items:stretch}
-.pcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
-.pcard img{max-height:70px;max-width:100%;object-fit:contain;background:#fff;border-radius:6px;padding:8px}
-.pcard b{font-family:'Oswald',sans-serif;font-size:13px;color:#fff}
-.pcard span{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.4}
-.partner-cta{text-align:center;margin-top:34px}
-.partner-cta p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:14px}
+/* parceiros interativos */
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;margin-top:34px;align-items:stretch}
+.pcard{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px 18px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;color:inherit;cursor:pointer;transition:transform .28s cubic-bezier(.16,1,.3,1),border-color .28s ease,box-shadow .28s ease,background .28s ease;overflow:hidden}
+.pcard::before{content:'';position:absolute;inset:0;border-radius:14px;background:radial-gradient(circle at 50% 0%,rgba(212,175,55,.18),transparent 70%);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.pcard:hover{transform:translateY(-8px) scale(1.02);border-color:var(--gold);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(212,175,55,.06));box-shadow:0 18px 38px rgba(0,0,0,.6),0 0 24px rgba(212,175,55,.2)}
+.pcard:hover::before{opacity:1}
+.pcard-img-wrap{width:100%;height:84px;background:#ffffff;border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:transform .28s ease,box-shadow .28s ease}
+.pcard:hover .pcard-img-wrap{transform:scale(1.05);box-shadow:0 6px 20px rgba(212,175,55,.32)}
+.pcard img{max-height:64px;max-width:100%;object-fit:contain}
+.pcard-tag{font-family:'Oswald',sans-serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.25);padding:3px 9px;border-radius:12px}
+.pcard b{font-family:'Oswald',sans-serif;font-size:14px;color:#fff;letter-spacing:.5px;line-height:1.25}
+.pcard span.p-desc{font-size:12px;color:rgba(255,255,255,.65);line-height:1.45;flex-grow:1}
+.pcard-action{font-family:'Oswald',sans-serif;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:5px;margin-top:4px;opacity:.85;transition:all .2s ease}
+.pcard:hover .pcard-action{opacity:1;color:#fff;transform:translateX(3px)}
+.partner-box-cta{margin-top:48px;background:linear-gradient(135deg,rgba(196,18,48,.2),rgba(212,175,55,.12));border:1.5px solid rgba(212,175,55,.4);border-radius:16px;padding:34px 24px;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.partner-box-cta h3{font-size:24px;color:#fff;margin-bottom:8px}
+.partner-box-cta h3 span{color:var(--gold)}
+.partner-box-cta p{color:rgba(255,255,255,.8);font-size:15px;max-width:580px;margin:0 auto 20px;line-height:1.6}
+.partner-box-cta .cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
+.partner-box-cta .phone-highlight{display:block;margin-top:16px;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:1px;color:rgba(255,255,255,.75)}
+.partner-box-cta .phone-highlight b{color:var(--gold);font-size:17px;letter-spacing:1.5px}
 
 /* timeline */
 .yjump{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 16px}
@@ -500,19 +513,169 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
 
 <section id="parceiros" class="dark-section">
   <div class="container">
-    <div class="section-label">Quem Apoia a Nova Geração</div>
-    <h2 class="big">Nossos Parceiros</h2>
-    <p class="lead">A Nova Geração agradece às marcas e instituições que caminham junto com a turma, apoiando o carnaval e as ações comunitárias ao longo do ano.</p>
+    <div class="section-label">Quem Caminha com a Nova Geração</div>
+    <h2 class="big">Nossos Parceiros Oficiais</h2>
+    <p class="lead">A Nova Geração agradece às marcas, empresas e instituições que fortalecem nossa cultura, nossos eventos e as ações sociais ao longo de todo o ano. Passe o mouse e clique para conhecer cada parceiro:</p>
+    
     <div class="partners-grid">
-      <div class="pcard"><img src="assets/parceiros/icc.png"/><b>Instituto Campograndense de Cultura</b><span>Parceria institucional · Cultura e memória de Campo Grande</span></div>
-      <div class="pcard"><img src="assets/parceiros/guaracamp.png"/><b>Guaracamp</b><span>Bebidas · Presente nos eventos e festas da turma</span></div>
-      <div class="pcard"><img src="assets/parceiros/ph-tendas.jpg"/><b>PH Tendas & Entretenimento</b><span>Tendas, mesas, cadeiras e estrutura para eventos</span></div>
-      <div class="pcard"><img src="assets/parceiros/antonio-pitassi.jpg"/><b>Antônio Pitassi</b><span>Decoração com balões</span></div>
-      <div class="pcard"><img src="assets/parceiros/cec.png"/><b>C&amp;C Engenharia e Capacitação</b><span>Engenharia e capacitação profissional</span></div>
+      <!-- 1. Guaracamp -->
+      <a class="pcard" href="https://www.guaracamp.com.br/" target="_blank" rel="noopener" title="Visitar site da Guaracamp">
+        <span class="pcard-tag">Bebidas Oficiais</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/guaracamp.png" alt="Guaracamp"/></div>
+        <b>Guaracamp</b>
+        <span class="p-desc">Presente nos eventos, ensaios e festas tradicionais da turma</span>
+        <span class="pcard-action">Acessar Site ↗</span>
+      </a>
+
+      <!-- 2. CEDAE -->
+      <a class="pcard" href="https://www.cedae.com.br/" target="_blank" rel="noopener" title="Visitar CEDAE">
+        <span class="pcard-tag">Apoio Institucional</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/cedae.jpg" alt="CEDAE"/></div>
+        <b>CEDAE</b>
+        <span class="p-desc">Apoio socioambiental e Programa de Aguadeiros nos eventos culturais</span>
+        <span class="pcard-action">Acessar Site ↗</span>
+      </a>
+
+      <!-- 3. Subprefeitura ZO II -->
+      <a class="pcard" href="https://prefeitura.rio/" target="_blank" rel="noopener" title="Subprefeitura da Zona Oeste II">
+        <span class="pcard-tag">Poder Público</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/subprefeitura.jpg" alt="Subprefeitura Zona Oeste II"/></div>
+        <b>Subprefeitura ZO II</b>
+        <span class="p-desc">Prefeitura do Rio · Apoio institucional e valorização do território</span>
+        <span class="pcard-action">Conhecer ↗</span>
+      </a>
+
+      <!-- 4. ICC -->
+      <a class="pcard" href="https://www.instagram.com/icc.cultura/" target="_blank" rel="noopener" title="Instituto Campograndense de Cultura">
+        <span class="pcard-tag">Memória & Cultura</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/icc.png" alt="Instituto Campograndense de Cultura"/></div>
+        <b>ICC</b>
+        <span class="p-desc">Instituto Campograndense de Cultura · Memória e patrimônio cultural</span>
+        <span class="pcard-action">Ver Perfil ↗</span>
+      </a>
+
+      <!-- 5. Artlatex Balões -->
+      <a class="pcard" href="https://artlatex.com.br/" target="_blank" rel="noopener" title="Artlatex Balões">
+        <span class="pcard-tag">Balões & Cenografia</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/artlatex.png" alt="Artlatex Balões"/></div>
+        <b>Artlatex Balões</b>
+        <span class="p-desc">Fornecimento oficial de balões para o Dia das Crianças e celebrações</span>
+        <span class="pcard-action">Acessar Site ↗</span>
+      </a>
+
+      <!-- 6. Ademicon -->
+      <a class="pcard" href="https://www.ademicon.com.br/" target="_blank" rel="noopener" title="Ademicon Campo Grande">
+        <span class="pcard-tag">Consórcio & Finanças</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/ademicon.jpg" alt="Ademicon Campo Grande"/></div>
+        <b>Ademicon Campo Grande</b>
+        <span class="p-desc">Especialistas em consórcios e investimentos imobiliários e auto</span>
+        <span class="pcard-action">Acessar Site ↗</span>
+      </a>
+
+      <!-- 7. C&C Engenharia -->
+      <a class="pcard" href="https://github.com/PITICALYN/cec-site" target="_blank" rel="noopener" title="C&C Engenharia e Capacitação">
+        <span class="pcard-tag">Engenharia & Treinamento</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/cec.png" alt="C&C Engenharia e Capacitação"/></div>
+        <b>C&amp;C Engenharia</b>
+        <span class="p-desc">Engenharia técnica e capacitação profissional de qualidade</span>
+        <span class="pcard-action">Conhecer ↗</span>
+      </a>
+
+      <!-- 8. PH Tendas -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/phtendas/" target="_blank" rel="noopener" title="PH Tendas & Entretenimento">
+        <span class="pcard-tag">Estruturas & Eventos</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/ph-tendas.jpg" alt="PH Tendas & Entretenimento"/></div>
+        <b>PH Tendas</b>
+        <span class="p-desc">Tendas, palcos, mesas e estrutura completa para eventos</span>
+        <span class="pcard-action">Ver Mais ↗</span>
+      </a>
+
+      <!-- 9. Antônio Pitassi -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/antoniopitassi/" target="_blank" rel="noopener" title="Antônio Pitassi">
+        <span class="pcard-tag">Arte com Balões</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/antonio-pitassi.jpg" alt="Antônio Pitassi"/></div>
+        <b>Antônio Pitassi</b>
+        <span class="p-desc">Decoração artística de alta complexidade com balões</span>
+        <span class="pcard-action">Conhecer ↗</span>
+      </a>
+
+      <!-- 10. Brinquedos Evelin -->
+      <a class="pcard" href="tel:+5521975472846" title="Ligar para Brinquedos Evelin">
+        <span class="pcard-tag">Recreação Infantil</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/evelin-brinquedos.jpg" alt="Brinquedos Evelin"/></div>
+        <b>Brinquedos Evelin</b>
+        <span class="p-desc">Locação de brinquedos infláveis, estações e alegria infantil</span>
+        <span class="pcard-action">Ligar: (21) 97547-2846 ↗</span>
+      </a>
+
+      <!-- 11. Érica Sant'Ana -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/ericasantana/" target="_blank" rel="noopener" title="Érica Sant'Ana">
+        <span class="pcard-tag">Confeitaria Fina</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/erica-santana.png" alt="Érica Sant'Ana"/></div>
+        <b>Érica Sant'Ana</b>
+        <span class="p-desc">Confeitaria artística, bolos decorados e doces finos artesanais</span>
+        <span class="pcard-action">Ver Perfil ↗</span>
+      </a>
+
+      <!-- 12. JL Moda Fitness -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/jlmodafitness/" target="_blank" rel="noopener" title="JL Moda Fitness">
+        <span class="pcard-tag">Moda & Treino</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/jl-moda-fitness.jpg" alt="JL Moda Fitness"/></div>
+        <b>JL Moda Fitness</b>
+        <span class="p-desc">Vestuário esportivo com estilo, conforto e tecnologia</span>
+        <span class="pcard-action">Conhecer ↗</span>
+      </a>
+
+      <!-- 13. Story Maker Jess -->
+      <a class="pcard" href="https://www.instagram.com/storymaker.jess/" target="_blank" rel="noopener" title="Story Maker Jess">
+        <span class="pcard-tag">Cobertura Digital</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/storymaker-jess.jpg" alt="Story Maker Jess"/></div>
+        <b>Story Maker Jess</b>
+        <span class="p-desc">Criação de conteúdo dinâmico, reels e cobertura ao vivo</span>
+        <span class="pcard-action">@storymaker.jess ↗</span>
+      </a>
+
+      <!-- 14. Welington Dias -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/welingtondias/" target="_blank" rel="noopener" title="Vereador Welington Dias">
+        <span class="pcard-tag">Apoio Comunitário</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/welington-dias.jpg" alt="Welington Dias"/></div>
+        <b>Welington Dias</b>
+        <span class="p-desc">Apoio e incentivo contínuo às manifestações populares e culturais</span>
+        <span class="pcard-action">Conhecer ↗</span>
+      </a>
+
+      <!-- 15. Família Marinha -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/familiamarinha/" target="_blank" rel="noopener" title="Família Marinha Bangu">
+        <span class="pcard-tag">Tradição Coirmã</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/familia-marinha.jpg" alt="Família Marinha Bangu"/></div>
+        <b>Família Marinha</b>
+        <span class="p-desc">Turma de Clóvis de Bangu · União e respeito entre coirmãs</span>
+        <span class="pcard-action">Ver Perfil ↗</span>
+      </a>
+
+      <!-- 16. Gandalf Facas Custom -->
+      <a class="pcard" href="https://www.instagram.com/explore/tags/gandalffacascustom/" target="_blank" rel="noopener" title="Gandalf Facas Custom">
+        <span class="pcard-tag">Cutelaria Custom</span>
+        <div class="pcard-img-wrap"><img src="assets/parceiros/gandalf.jpg" alt="Gandalf Facas Custom"/></div>
+        <b>Gandalf Facas Custom</b>
+        <span class="p-desc">O Mago das Facas Custom · Arte e lâminas personalizadas sob medida</span>
+        <span class="pcard-action">Conhecer ↗</span>
+      </a>
     </div>
-    <div class="partner-cta">
-      <p>Quer anunciar sua marca ou apoiar a Nova Geração? Fale com a gente.</p>
-      <a class="btn partner" style="padding:14px 30px" href="https://wa.me/message/L5ZLLYQP6AY2L1?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20ser%20parceiro%20da%20Nova%20Gera%C3%A7%C3%A3o!" target="_blank">🤝 Quero ser Parceiro</a>
+
+    <!-- CTA Comercial -->
+    <div class="partner-box-cta">
+      <h3>Seja um <span>Parceiro Oficial</span> da Nova Geração</h3>
+      <p>Associe sua marca à maior tradição cultural e social de Campo Grande. Ganhe visibilidade em nossos eventos, redes sociais e ações comunitárias.</p>
+      <div class="cta-buttons">
+        <a class="btn partner" style="padding:15px 32px;font-size:15px;display:inline-flex;align-items:center;gap:8px" href="https://wa.me/5521992248887?text=Ol%C3%A1!%20Gostaria%20de%20ser%20parceiro%20da%20Turma%20Nova%20Gera%C3%A7%C3%A3o." target="_blank">
+          💬 Chamar no WhatsApp: (21) 99224-8887
+        </a>
+        <a class="btn ghost" style="padding:15px 28px;font-size:15px;display:inline-flex;align-items:center;gap:8px" href="tel:+5521992248887">
+          📞 Ligar Agora
+        </a>
+      </div>
+      <span class="phone-highlight">Contato Direto de Parcerias: <b>(21) 99224-8887</b></span>
     </div>
   </div>
 </section>
@@ -536,12 +699,12 @@ footer{background:#000;padding:50px 0 30px;border-top:1px solid rgba(212,175,55,
     <div class="foot-grid">
       <div class="foot-brand"><img src="assets/logo.png"/><div><b>Nova Geração CG</b><span>Campo Grande · Rio de Janeiro</span></div></div>
       <div class="foot-links">
-        <div class="foot-col"><h4>Contato</h4><a href="https://wa.me/message/L5ZLLYQP6AY2L1">WhatsApp Oficial</a><p>turmanovageracaocg@gmail.com</p></div>
+        <div class="foot-col"><h4>Contato</h4><a href="https://wa.me/5521992248887" target="_blank">WhatsApp: (21) 99224-8887</a><p>turmanovageracaocg@gmail.com</p></div>
         <div class="foot-col"><h4>Redes</h4><a href="https://www.instagram.com/novageracao_cg" target="_blank">Instagram @novageracao_cg</a><a href="#">Threads @novageracao_cg</a></div>
         <div class="foot-col"><h4>Desde</h4><p>2001 · Campo Grande, RJ</p><p>Zona Oeste · Brasil</p></div>
       </div>
     </div>
-    <div class="foot-bottom">© 2026 Turma Nova Geração CG · Patrimônio Cultural Imaterial Carioca · Prévia interna, ainda não publicada</div>
+    <div class="foot-bottom">© 2026 Turma Nova Geração CG · Patrimônio Cultural Imaterial Carioca · 26 Anos de Tradição e Memória Popular</div>
   </div>
 </footer>
 
